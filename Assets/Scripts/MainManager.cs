@@ -12,6 +12,9 @@ public class MainManager : MonoBehaviour
 
     public Text ScoreText;
     public GameObject GameOverText;
+
+    public GameObject returnMenu;
+    public GameObject restartGame;
     
     private bool m_Started = false;
     private int m_Points;
@@ -55,10 +58,9 @@ public class MainManager : MonoBehaviour
         }
         else if (m_GameOver)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
+            
+
+        
         }
     }
 
@@ -71,6 +73,12 @@ public class MainManager : MonoBehaviour
     public void GameOver()
     {
         m_GameOver = true;
-        GameOverText.SetActive(true);
+        GameOverText.SetActive(false);
+
+        returnMenu.SetActive(true);
+        restartGame.SetActive(true);
     }
+
+    
+       
 }
